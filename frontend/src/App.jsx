@@ -1,11 +1,12 @@
 import React from 'react';
 import ItemsList from './ItemsList';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+
 function App() {
   return (
     <div className="App">
-      <h1 className="text-center">Hello World</h1>
-
-      <ItemsList />
+      < ItemsList />
     </div>
   );  
 }

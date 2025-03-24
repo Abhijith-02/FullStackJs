@@ -17,10 +17,10 @@ function ItemsList() {
 
   return (
     <div>
-      <h2>Items List</h2>
-      <ul>
+      <h2 className='text-center bg-dark text-white m-0 p-'>Items List</h2>
+      <ul className='text-center bg-danger text-white list-style-none p-5'>
         {items.map((item) => (
-          <li key={item._id}>{item.name}: {item.description}</li>
+          <li key={item._id}><h4 className='m-1 p-2'>{item._id} : {item.name} : {item.description}</h4></li>
         ))}
       </ul>
     </div>
