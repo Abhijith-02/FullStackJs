@@ -24,7 +24,6 @@ function PostItem() {
 
       const data = await response.json();
       console.log('Item successfully posted:', data);
-      // Optionally, reset the form fields
       setName('');
       setDescription('');
     } catch (error) {
@@ -33,28 +32,34 @@ function PostItem() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Name:
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-      </label>
-      <br />
-      <label>
-        Description:
-        <textarea
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          required
-        />
-      </label>
-      <br />
-      <button type="submit">Add Item</button>
-    </form>
+    <div className="container mt-5">
+      <h2 className="mb-4">Add New Item</h2>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label htmlFor="itemName" className="form-label">Name:</label>
+          <input
+            type="text"
+            className="form-control"
+            id="itemName"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="itemDescription" className="form-label">Description:</label>
+          <textarea
+            className="form-control"
+            id="itemDescription"
+            rows="3"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            required
+          ></textarea>
+        </div>
+        <button type="submit" className="btn btn-primary">Add Item</button>
+      </form>
+    </div>
   );
 }
 
